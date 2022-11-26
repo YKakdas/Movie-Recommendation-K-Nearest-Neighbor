@@ -82,9 +82,7 @@ def find_recommendations(keyword, number_of_recommendations, show_only_best_resu
     # benefits.
     dense_input_matrix = csr_matrix(df.values)
 
-    # I've used metric "cosine" and algorithm = auto. Algorithm auto means
-    # I've let sklearn to find the optimal algorithm for me by evaluating my input data. There is no best K-value for
-    # number of neighbors, but after I tried a few of different values, from my observations 20 gave me good results.
+    # I've used metric "cosine" and algorithm = auto.
     # n_jobs=-1 means use all available processors to parallelize the algorithm
     knn = NearestNeighbors(metric="cosine", n_neighbors=20, n_jobs=-1)
 
